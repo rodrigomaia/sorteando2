@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe "sorteios/index" do
+describe "sorteios/index.html.erb" do
   it "mostrar titulo Sorteios" do
     assign :sorteios, []
     render

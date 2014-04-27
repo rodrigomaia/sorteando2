@@ -28,16 +28,17 @@ gem 'spring'
 
 group :test, :development  do  
   gem 'rspec-rails'
-  # gem 'rspec'
-  # gem 'shoulda'
-  # gem 'cucumber'
-  # gem 'cucumber-rails'
-  # gem 'simplecov'
+  gem 'shoulda'
+  gem 'cucumber'
+  gem 'cucumber-rails'
+  gem 'simplecov'
   gem 'factory_girl'
   gem 'capybara'
+  gem 'capybara-webkit'
   gem 'headless'
   gem 'database_cleaner'
-  # gem 'capybara-webkit'
+  
+  gem "rails-erd"
 end
 
 

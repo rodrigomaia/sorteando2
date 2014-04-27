@@ -1,0 +1,42 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/rodrigo/Dropbox/TCC/sorteando2/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/rodrigo/Dropbox/TCC/sorteando2/app/helpers/concorrentes_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/rodrigo/Dropbox/TCC/sorteando2/app/helpers/sorteios_helper.rb": [
+        1,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/rodrigo/Dropbox/TCC/sorteando2/app/models/sorteio.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1398641438
+  }
+}
