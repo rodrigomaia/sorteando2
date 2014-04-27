@@ -1,15 +1,18 @@
+# encoding: UTF-8
 require 'spec_helper'
 
-# Specs in this file have access to a helper object that includes
-# the SorteiosHelper. For example:
-#
-# describe SorteiosHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       expect(helper.concat_strings("this","that")).to eq("this that")
-#     end
-#   end
-# end
 describe SorteiosHelper do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+	describe "#sorteio_encerrado?" do
+    it "deveria retornar false quando não houverem vencedores" do
+      sorteio = double('Sorteio', :vencedores => [])
+			sorteio_encerrado?(sorteio).should be_false
+		end
+    
+		it "deveria retornar true quando houverem vencedores" do
+      sorteio = double('Sorteio', :vencedores => [1])
+			sorteio_encerrado?(sorteio).should be_true
+		end    
+	end
+  
 end
