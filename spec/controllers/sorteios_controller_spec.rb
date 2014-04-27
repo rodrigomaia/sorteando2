@@ -5,7 +5,7 @@ describe SorteiosController do
   
   describe "GET sortear" do
     before do
-      @sorteio = double('Sorteio')
+      @sorteio = double('Sorteio', :id => 1)
       @sorteio.stub(:sortear)
       Sorteio.stub(:find).and_return(@sorteio)
     end
@@ -119,7 +119,7 @@ describe SorteiosController do
         
     it "salva um sorteio" do
       Sorteio.any_instance.should_receive(:save).and_return(true)
-      post :create, :id => 1
+      post :create, :id => 1, :sorteio => {:id => 1}
     end
     
     context "se sorteio for salvo com sucesso" do
@@ -128,12 +128,12 @@ describe SorteiosController do
       end
       
       it "deve enviar pra tela de sorteios" do
-        post :create, :id => 1
+        post :create, :id => 1, :sorteio => {:id => 1}
         response.should redirect_to sorteios_path
       end
       
       it "deve enviar uma notificação de Sorteio criado." do
-        post :create, :id => 1
+        post :create, :id => 1, :sorteio => {:id => 1}
         flash[:notice].should == "Sorteio criado."
       end
     end
@@ -144,7 +144,7 @@ describe SorteiosController do
       end
       
       it "deve enviar pra tela de novo sorteio" do
-        post :create, :id => 1
+        post :create, :id => 1, :sorteio => {:id => 1}
         response.should render_template("sorteios/new")
       end
     end
@@ -158,7 +158,7 @@ describe SorteiosController do
         
     it "atualiza um sorteio" do
       @sorteio.should_receive(:update_attributes).and_return(true)
-      put :update, :id => 1
+      put :update, :id => 1, :sorteio => {:id => 1}
     end
     
     context "se sorteio for atualizado com sucesso" do
@@ -167,12 +167,12 @@ describe SorteiosController do
       end
       
       it "deve enviar pra tela de sorteios" do
-        post :update, :id => 1
+        post :update, :id => 1, :sorteio => {:id => 1}
         response.should redirect_to sorteios_path
       end
       
       it "deve enviar uma notificação de Sorteio atualizado." do
-        post :update, :id => 1
+        post :update, :id => 1, :sorteio => {:id => 1}
         flash[:notice].should == "Sorteio atualizado."
       end
     end
@@ -183,7 +183,7 @@ describe SorteiosController do
       end
       
       it "deve enviar pra tela de edição do sorteio" do
-        post :update, :id => 1
+        post :update, :id => 1, :sorteio => {:id => 1}
         response.should render_template("sorteios/edit")
       end
     end

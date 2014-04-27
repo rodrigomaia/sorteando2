@@ -43,7 +43,7 @@ describe ConcorrentesController do
     
     it "salva um concorrente" do
       @concorrente_double.should_receive(:save)
-      post :create, :sorteio_id => 1
+      post :create, :sorteio_id => 1, :concorrente => {:id => 1}
     end
     
     context "se concorrente for salvo com sucesso" do
@@ -52,12 +52,12 @@ describe ConcorrentesController do
       end
       
       it "deve enviar pra tela de apresentação do sorteio deste concorrente" do
-        post :create, :sorteio_id => 1
+        post :create, :sorteio_id => 1, :concorrente => {:id => 1}
         response.should redirect_to sorteio_path(1)
       end
       
       it "deve enviar uma notificação de Concorrente criado." do
-        post :create, :sorteio_id => 1
+        post :create, :sorteio_id => 1, :concorrente => {:id => 1}
         flash[:notice].should == "Concorrente criado."
       end
     end
@@ -68,12 +68,12 @@ describe ConcorrentesController do
       end
       
       it "deve enviar pra tela de apresentação do sorteio deste concorrente" do
-        post :create, :sorteio_id => 1
+        post :create, :sorteio_id => 1, :concorrente => {:id => 1}
         response.should redirect_to sorteio_path(1)
       end
         
       it "deve enviar uma notificação de Houve um erro na criação do Concorrente." do
-        post :create, :sorteio_id => 1
+        post :create, :sorteio_id => 1, :concorrente => {:id => 1}
         flash[:notice].should == "Houve um erro na criação do Concorrente."
       end
     end

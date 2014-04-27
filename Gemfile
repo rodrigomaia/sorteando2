@@ -30,7 +30,7 @@ group :test, :development  do
   gem 'rspec-rails'
   gem 'shoulda'
   gem 'cucumber'
-  gem 'cucumber-rails'
+  gem 'cucumber-rails', :require => false
   gem 'simplecov'
   gem 'factory_girl'
   gem 'capybara'
