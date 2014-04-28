@@ -8,9 +8,7 @@ describe "concorrentes/new.html.erb" do
     assign :concorrente, concorrente
 
     render
-    rendered.should have_selector 'h1',
-              :content => 'Novo Concorrente',
-              :count => 1
+    rendered.should have_content 'Novo Concorrente'
   end
   
 end

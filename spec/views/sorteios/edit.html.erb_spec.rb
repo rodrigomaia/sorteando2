@@ -1,7 +1,7 @@
 # encoding: UTF-8
 require "spec_helper"
 
-describe "sorteios/edit/" do
+describe "sorteios/edit.html.erb" do
   before do
     assign :sorteio, FactoryGirl.create(:sorteio, :id => 10)
     render
@@ -16,7 +16,7 @@ describe "sorteios/edit/" do
   end
 
   it "deve aparecer um link para ver o sorteio" do
-    rendered.should have_selector("a", :href => '/sorteios/10')
+    rendered.should have_link("☉", :href => '/sorteios/10')
   end
 end
 
